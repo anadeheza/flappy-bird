@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://17fm86ijrls2"]
+
+[ext_resource type="Texture2D" uid="uid://btyiyxkhcyq7d" path="res://assets/sprites/background-day.png" id="1_fdcud"]
+[ext_resource type="Texture2D" uid="uid://lw6kgtgf0jqj" path="res://assets/sprites/base.png" id="2_j5xpj"]
+[ext_resource type="PackedScene" uid="uid://d06d3oj7osvuh" path="res://Escenas/Bird.tscn" id="3_qpgdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3g4d"]
+size = Vector2(335.9223, 110.679565)
+
+[node name="Main" type="Node2D" unique_id=1663794770]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=102902050]
+position = Vector2(576, 324)
+scale = Vector2(1.26, 1.26)
+texture = ExtResource("1_fdcud")
+
+[node name="Base" type="StaticBody2D" parent="." unique_id=1986840605]
+position = Vector2(576, 586)
+scale = Vector2(1.08, 1.08)
+
+[node name="Sprite2D" type="Sprite2D" parent="Base" unique_id=967983169]
+texture = ExtResource("2_j5xpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base" unique_id=2054754542]
+position = Vector2(-7.4071795e-06, 0.97088623)
+shape = SubResource("RectangleShape2D_o3g4d")
+
+[node name="Bird" parent="." unique_id=949511918 instance=ExtResource("3_qpgdo")]
+position = Vector2(439, 320)
