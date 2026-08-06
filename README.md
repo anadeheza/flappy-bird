@@ -27,5 +27,5 @@ I wanted to focus on the coding itself instead of making all the assets from scr
 
 From these, i modified the logo (change the colors a bit, made it more transparent aswell), and the superman flappy bird to make the other two sprites (flappyMid and flappyDown)
 
-Apart from that, i made the base from scratch 
+Apart from that, i made the base from scratch
 
