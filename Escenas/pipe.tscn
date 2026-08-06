@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdw04bg2877hr"]
 
 [ext_resource type="Script" uid="uid://dxkag62g2giy4" path="res://Escenas/pipe.gd" id="1_mknoi"]
-[ext_resource type="Texture2D" uid="uid://doh3m4cf5ed2f" path="res://assets/sprites/pipe-green.png" id="1_mmx4f"]
+[ext_resource type="Texture2D" uid="uid://5wjy58834gsk" path="res://assets/sprites/pipe-red.png" id="2_mknoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3g4d"]
 size = Vector2(41.5, 318.25)
@@ -20,7 +20,7 @@ script = ExtResource("1_mknoi")
 [node name="Sprite2D" type="Sprite2D" parent="Top" unique_id=1704494369]
 position = Vector2(0, -100)
 rotation = 3.1415927
-texture = ExtResource("1_mmx4f")
+texture = ExtResource("2_mknoi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=835573131]
 position = Vector2(0, -101.125)
@@ -30,7 +30,7 @@ shape = SubResource("RectangleShape2D_o3g4d")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bottom" unique_id=1429743944]
 position = Vector2(0, 350)
-texture = ExtResource("1_mmx4f")
+texture = ExtResource("2_mknoi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=36941042]
 position = Vector2(-1, 351)

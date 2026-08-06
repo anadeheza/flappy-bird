@@ -3,6 +3,8 @@ extends Node2D
 const PIPE_SCENE = preload("res://Escenas/pipe.tscn")
 const PIPE_SPAWN_X = 600.0 
  
+const DIGITS = "res://assets/sprites/numbers/"
+
 enum GameState {
 	MENU,
 	PLAYING,
@@ -37,6 +39,7 @@ func start_game():
 	game_state = GameState.PLAYING
 	
 	score = 0
+	mostrar_score(score, $UI/Score/ScoreLabel)
 	
 	$UI/Menu.visible = false 
 	$UI/GameOver.visible = false 
@@ -65,7 +68,7 @@ func _on_pipe_scored():
 		return
 	
 	score += 1
-	$UI/Score/ScoreLabel.text = str(score)
+	mostrar_score(score, $UI/Score/ScoreLabel)
 
 func _on_bird_died():
 	if game_state != GameState.PLAYING:
@@ -74,6 +77,7 @@ func _on_bird_died():
 	game_state = GameState.GAMEOVER
 	
 	pipe_timer.stop()
+	mostrar_score(score, $UI/GameOver/ScoreLabel)
 	$UI/GameOver.visible = true
 
 func restart_game():
@@ -89,3 +93,13 @@ func _show_menu():
 	$UI/Menu.visible = true 
 	$UI/GameOver.visible = false 
 	$UI/Score.visible = false
+
+func mostrar_score(numero: int, cont: HBoxContainer):
+	for hijo in cont.get_children():
+		hijo.queue_free()
+		
+	for char in str(numero):
+		var tex_rec = TextureRect.new()
+		tex_rec.texture = load(DIGITS + char + ".png")
+		tex_rec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		cont.add_child(tex_rec)

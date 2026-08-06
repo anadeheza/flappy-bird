@@ -8,6 +8,8 @@ const JUMP_FORCE = -350.0
 var vive = false 
 var can_move = false 
 
+@onready var sprites: AnimatedSprite2D = $AnimatedSprite2D
+
 func _physics_process(delta):
 	if not can_move:
 		return 
@@ -16,6 +18,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("jump") and vive:
 		velocity.y = JUMP_FORCE
+		
 	move_and_slide()
 	
 	if vive and get_slide_collision_count() > 0:

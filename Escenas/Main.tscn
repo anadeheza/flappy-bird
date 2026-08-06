@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://17fm86ijrls2"]
 
-[ext_resource type="Texture2D" uid="uid://btyiyxkhcyq7d" path="res://assets/sprites/background-day.png" id="1_fdcud"]
 [ext_resource type="Script" uid="uid://bowsvou2kb8f4" path="res://Escenas/main.gd" id="1_qpgdo"]
-[ext_resource type="Texture2D" uid="uid://lw6kgtgf0jqj" path="res://assets/sprites/base.png" id="2_j5xpj"]
+[ext_resource type="Texture2D" uid="uid://bamygf7acf17d" path="res://assets/sprites/base.png" id="2_j5xpj"]
+[ext_resource type="Texture2D" uid="uid://msp1ek2nlie1" path="res://assets/sprites/metropolis.jpg" id="2_qpgdo"]
 [ext_resource type="PackedScene" uid="uid://d06d3oj7osvuh" path="res://Escenas/Bird.tscn" id="3_qpgdo"]
+[ext_resource type="Texture2D" uid="uid://u4qvqpa3420t" path="res://assets/sprites/message.png" id="5_3yqt6"]
+[ext_resource type="Texture2D" uid="uid://ckimqja8ge1pi" path="res://assets/sprites/gameover.png" id="6_mbvap"]
+[ext_resource type="Texture2D" uid="uid://towjk0udxwew" path="res://assets/sprites/supLogo.png" id="7_r8q0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3g4d"]
-size = Vector2(425.82947, 71.080505)
+size = Vector2(425.82947, 67.94766)
 
 [node name="Main" type="Node2D" unique_id=1663794770]
 script = ExtResource("1_qpgdo")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=102902050]
-position = Vector2(217, 382.99997)
-scale = Vector2(1.4930555, 1.5039061)
-texture = ExtResource("1_fdcud")
+position = Vector2(217, 378.99997)
+scale = Vector2(0.5204819, 0.51626015)
+texture = ExtResource("2_qpgdo")
 
 [node name="Base" type="StaticBody2D" parent="." unique_id=1986840605]
 position = Vector2(576, 586)
@@ -27,7 +30,7 @@ scale = Vector2(1.1887345, 0.641)
 texture = ExtResource("2_j5xpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base" unique_id=2054754542]
-position = Vector2(-334.0277, 129.62964)
+position = Vector2(-334.0277, 131.19604)
 scale = Vector2(0.96000004, 1)
 shape = SubResource("RectangleShape2D_o3g4d")
 
@@ -46,23 +49,30 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="UI/Menu" unique_id=1252519254]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 200.0
-offset_right = 219.0
-offset_bottom = 223.0
-rotation = 0.018103564
-scale = Vector2(2, 2)
-text = "FLAPPY BIRD"
-
 [node name="HintLabel" type="Label" parent="UI/Menu" unique_id=1110284844]
+modulate = Color(0.70980394, 0.26666668, 0.16862746, 1)
 layout_mode = 0
-offset_left = 130.0
-offset_top = 650.0
-offset_right = 307.0
-offset_bottom = 673.0
+offset_left = 128.0
+offset_top = 712.0
+offset_right = 305.0
+offset_bottom = 735.0
 text = "PRESS SPACE TO START"
+
+[node name="Title" type="TextureRect" parent="UI/Menu" unique_id=1922714464]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 166.0
+offset_right = 309.0
+offset_bottom = 215.0
+texture = ExtResource("5_3yqt6")
+
+[node name="Logo" type="TextureRect" parent="UI/Menu" unique_id=922672649]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 300.0
+offset_right = 275.0
+offset_bottom = 371.0
+texture = ExtResource("7_r8q0l")
 
 [node name="GameOver" type="Control" parent="UI" unique_id=1506183442]
 layout_mode = 3
@@ -70,34 +80,31 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GameOvLabel" type="Label" parent="UI/GameOver" unique_id=759615139]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 150.0
-offset_right = 237.0
-offset_bottom = 173.0
-scale = Vector2(1.5, 1.5)
-text = "GAME OVER"
-
-[node name="ScoreLabel" type="Label" parent="UI/GameOver" unique_id=1740830709]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 300.0
-offset_right = 239.0
-offset_bottom = 323.0
-scale = Vector2(1.3, 1.3)
-text = "SCORE: 0"
-
 [node name="RestartLabel" type="Label" parent="UI/GameOver" unique_id=952954148]
+modulate = Color(0.70980394, 0.26666668, 0.16862746, 1)
 layout_mode = 0
-offset_left = 100.0
-offset_top = 650.0
-offset_right = 322.0
-offset_bottom = 673.0
-rotation = -0.011591109
+offset_left = 97.99999
+offset_top = 712.00006
+offset_right = 320.0
+offset_bottom = 735.00006
 text = "PRESS SPACE TO PLAY AGAIN"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOvLabel" type="TextureRect" parent="UI/GameOver" unique_id=1558009003]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 300.0
+offset_right = 360.0
+offset_bottom = 367.0
+texture = ExtResource("6_mbvap")
+
+[node name="ScoreLabel" type="HBoxContainer" parent="UI/GameOver" unique_id=531758598]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 65.0
+offset_right = 240.0
+offset_bottom = 105.0
 
 [node name="Score" type="Control" parent="UI" unique_id=659262234]
 layout_mode = 3
@@ -105,11 +112,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ScoreLabel" type="Label" parent="UI/Score" unique_id=591900243]
+[node name="ScoreLabel" type="HBoxContainer" parent="UI/Score" unique_id=1499117112]
 layout_mode = 0
 offset_left = 200.0
-offset_top = 20.0
-offset_right = 210.0
-offset_bottom = 43.0
-scale = Vector2(2, 2)
-text = "0"
+offset_top = 65.0
+offset_right = 240.0
+offset_bottom = 105.0
