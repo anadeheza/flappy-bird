@@ -1,6 +1,6 @@
 # Flappy Superman
 
-A Flappy Bird-style game with a Superman style, made using Godot.
+A Flappy Bird game but make it Superman styled, made using Godot.
 
 ## How to Play
 
