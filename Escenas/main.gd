@@ -16,6 +16,7 @@ var score = 0
 
 @onready var bird = $Bird 
 @onready var pipe_timer = $PipeSpawnTimer
+@onready var scoreSound: AudioStreamPlayer = $sonidoScore
 
 func _ready():
 	pipe_timer.timeout.connect(_on_pipe_spawn_timer_timeout)
@@ -68,6 +69,7 @@ func _on_pipe_scored():
 		return
 	
 	score += 1
+	scoreSound.play()
 	mostrar_score(score, $UI/Score/ScoreLabel)
 
 func _on_bird_died():
@@ -77,8 +79,14 @@ func _on_bird_died():
 	game_state = GameState.GAMEOVER
 	
 	pipe_timer.stop()
-	mostrar_score(score, $UI/GameOver/ScoreLabel)
+	
+	for p in get_children():
+		if p.scene_file_path == "res://Escenas/pipe.tscn":
+			p.detener()
+	
+	$UI/GameOver/ScoreLabel.text = "SCORE: " + str(score)
 	$UI/GameOver.visible = true
+	$UI/Score.visible = false
 
 func restart_game():
 	for child in get_children():
@@ -98,8 +106,8 @@ func mostrar_score(numero: int, cont: HBoxContainer):
 	for hijo in cont.get_children():
 		hijo.queue_free()
 		
-	for char in str(numero):
+	for car in str(numero):
 		var tex_rec = TextureRect.new()
-		tex_rec.texture = load(DIGITS + char + ".png")
+		tex_rec.texture = load(DIGITS + car + ".png")
 		tex_rec.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		cont.add_child(tex_rec)

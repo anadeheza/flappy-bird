@@ -9,6 +9,9 @@ var vive = false
 var can_move = false 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jumpSound: AudioStreamPlayer = $SonidoSalto
+@onready var hitSound: AudioStreamPlayer = $SonidoGolpe
+@onready var dieSound: AudioStreamPlayer = $SonidoMuerte
 
 func _physics_process(delta):
 	if not can_move:
@@ -19,6 +22,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and vive:
 		velocity.y = JUMP_FORCE
 		sprite.play("fly")
+		jumpSound.play()
+	
 	move_and_slide()
 	
 	if vive and get_slide_collision_count() > 0:
@@ -28,13 +33,19 @@ func start():
 	vive = true 
 	can_move = true
 	velocity = Vector2.ZERO 
+	
 	rotation_degrees = 0
 	
 func die():
 	if not vive:
 		return
 	
+	rotation_degrees = 180
+	
 	vive = false
-	can_move = false
+	
 	sprite.stop()
+	hitSound.play()
+	dieSound.play()
+	
 	died.emit()

@@ -10,7 +10,7 @@ size = Vector2(41.5, 318.25)
 size = Vector2(44, 317)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojxm5"]
-size = Vector2(40, 128.01462)
+size = Vector2(27.99462, 128.01462)
 
 [node name="Pipe" type="Node2D" unique_id=759811948]
 script = ExtResource("1_mknoi")
@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_luinv")
 position = Vector2(334, 294)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Score" unique_id=12312331]
-position = Vector2(-336.00983, -168.9998)
+position = Vector2(-321.02536, -169.29373)
 rotation = -0.019612698
 shape = SubResource("RectangleShape2D_ojxm5")
 

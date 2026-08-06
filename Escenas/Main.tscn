@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://u4qvqpa3420t" path="res://assets/sprites/message.png" id="5_3yqt6"]
 [ext_resource type="Texture2D" uid="uid://ckimqja8ge1pi" path="res://assets/sprites/gameover.png" id="6_mbvap"]
 [ext_resource type="Texture2D" uid="uid://towjk0udxwew" path="res://assets/sprites/supLogo.png" id="7_r8q0l"]
+[ext_resource type="AudioStream" uid="uid://bfmlkhc3j54kb" path="res://assets/audio/point.ogg" id="8_bgy44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3g4d"]
 size = Vector2(425.82947, 67.94766)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgy44"]
+shadow_color = Color(0.38744763, 0.13108777, 0.07437098, 1)
 
 [node name="Main" type="Node2D" unique_id=1663794770]
 script = ExtResource("1_qpgdo")
@@ -94,17 +98,20 @@ vertical_alignment = 1
 [node name="GameOvLabel" type="TextureRect" parent="UI/GameOver" unique_id=1558009003]
 layout_mode = 0
 offset_left = 70.0
-offset_top = 300.0
+offset_top = 260.0
 offset_right = 360.0
-offset_bottom = 367.0
+offset_bottom = 327.0
 texture = ExtResource("6_mbvap")
 
-[node name="ScoreLabel" type="HBoxContainer" parent="UI/GameOver" unique_id=531758598]
+[node name="ScoreLabel" type="Label" parent="UI/GameOver" unique_id=364969647]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 65.0
-offset_right = 240.0
-offset_bottom = 105.0
+offset_left = 160.0
+offset_top = 360.0
+offset_right = 229.0
+offset_bottom = 383.0
+scale = Vector2(1.5, 1.5)
+text = "SCORE: 0"
+label_settings = SubResource("LabelSettings_bgy44")
 
 [node name="Score" type="Control" parent="UI" unique_id=659262234]
 layout_mode = 3
@@ -118,3 +125,6 @@ offset_left = 200.0
 offset_top = 65.0
 offset_right = 240.0
 offset_bottom = 105.0
+
+[node name="sonidoScore" type="AudioStreamPlayer" parent="." unique_id=799023818]
+stream = ExtResource("8_bgy44")

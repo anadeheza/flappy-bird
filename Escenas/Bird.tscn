@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bx5neokpsyhn4" path="res://assets/sprites/flappyMid.png" id="2_lppgw"]
 [ext_resource type="Texture2D" uid="uid://bvj77optvx7cc" path="res://assets/sprites/pngwing.com.png" id="3_oknfc"]
 [ext_resource type="Texture2D" uid="uid://ctiep1fxputb1" path="res://assets/sprites/flappyDown.png" id="4_drlti"]
+[ext_resource type="AudioStream" uid="uid://bmbi77an5428p" path="res://assets/audio/hit.ogg" id="6_8no6o"]
+[ext_resource type="AudioStream" uid="uid://uolidses0ew2" path="res://assets/audio/swoosh.ogg" id="6_8pstx"]
+[ext_resource type="AudioStream" uid="uid://dnlj11vlvdqoo" path="res://assets/audio/die.ogg" id="6_drlti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxlb5"]
 radius = 20.0
@@ -39,3 +42,13 @@ rotation = 0.00057339185
 sprite_frames = SubResource("SpriteFrames_o3g4d")
 animation = &"fly"
 speed_scale = 10.0
+
+[node name="SonidoSalto" type="AudioStreamPlayer" parent="." unique_id=373653863]
+stream = ExtResource("6_8pstx")
+volume_db = 1.67
+
+[node name="SonidoGolpe" type="AudioStreamPlayer" parent="." unique_id=325700813]
+stream = ExtResource("6_8no6o")
+
+[node name="SonidoMuerte" type="AudioStreamPlayer" parent="." unique_id=1262379445]
+stream = ExtResource("6_drlti")
