@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://d06d3oj7osvuh"]
 
 [ext_resource type="Script" uid="uid://ormqvluquo0e" path="res://Escenas/bird.gd" id="1_lppgw"]
-[ext_resource type="Texture2D" uid="uid://b1em8xc262l8j" path="res://assets/sprites/yellowbird-midflap.png" id="1_wwucv"]
-[ext_resource type="Texture2D" uid="uid://c3shgs4tgsxjx" path="res://assets/sprites/yellowbird-downflap.png" id="2_lppgw"]
-[ext_resource type="Texture2D" uid="uid://los872v0ldoq" path="res://assets/sprites/yellowbird-upflap.png" id="3_oknfc"]
+[ext_resource type="Texture2D" uid="uid://bx5neokpsyhn4" path="res://assets/sprites/flappyMid.png" id="2_lppgw"]
+[ext_resource type="Texture2D" uid="uid://bvj77optvx7cc" path="res://assets/sprites/pngwing.com.png" id="3_oknfc"]
+[ext_resource type="Texture2D" uid="uid://ctiep1fxputb1" path="res://assets/sprites/flappyDown.png" id="4_drlti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxlb5"]
-radius = 15.0
+radius = 20.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3g4d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wwucv")
+"texture": ExtResource("2_lppgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oknfc")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_lppgw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_wwucv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_oknfc")
+"texture": ExtResource("4_drlti")
 }],
 "loop": 1,
 "name": &"fly",
@@ -35,6 +35,7 @@ script = ExtResource("1_lppgw")
 shape = SubResource("CircleShape2D_sxlb5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=706837517]
+rotation = 0.00057339185
 sprite_frames = SubResource("SpriteFrames_o3g4d")
 animation = &"fly"
 speed_scale = 10.0

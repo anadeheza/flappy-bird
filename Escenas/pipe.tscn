@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cdw04bg2877hr"]
 
 [ext_resource type="Script" uid="uid://dxkag62g2giy4" path="res://Escenas/pipe.gd" id="1_mknoi"]
-[ext_resource type="Texture2D" uid="uid://bfqdlteq3gxv5" path="res://assets/sprites/pipe-green.png" id="1_mmx4f"]
+[ext_resource type="Texture2D" uid="uid://doh3m4cf5ed2f" path="res://assets/sprites/pipe-green.png" id="1_mmx4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3g4d"]
-size = Vector2(41.5, 320.5)
+size = Vector2(41.5, 318.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_luinv"]
 size = Vector2(44, 317)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojxm5"]
-size = Vector2(52, 133)
+size = Vector2(40, 128.01462)
 
 [node name="Pipe" type="Node2D" unique_id=759811948]
 script = ExtResource("1_mknoi")
@@ -23,7 +23,7 @@ rotation = 3.1415927
 texture = ExtResource("1_mmx4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=835573131]
-position = Vector2(0, -100)
+position = Vector2(0, -101.125)
 shape = SubResource("RectangleShape2D_o3g4d")
 
 [node name="Bottom" type="StaticBody2D" parent="." unique_id=852839725]
@@ -40,7 +40,8 @@ shape = SubResource("RectangleShape2D_luinv")
 position = Vector2(334, 294)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Score" unique_id=12312331]
-position = Vector2(-335, -168.5)
+position = Vector2(-336.00983, -168.9998)
+rotation = -0.019612698
 shape = SubResource("RectangleShape2D_ojxm5")
 
 [connection signal="body_entered" from="Score" to="." method="_on_score_body_entered"]

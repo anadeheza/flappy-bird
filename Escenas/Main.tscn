@@ -37,3 +37,79 @@ position = Vector2(93, 442)
 [node name="PipeSpawnTimer" type="Timer" parent="." unique_id=1467785416]
 wait_time = 1.5
 autostart = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1972520045]
+
+[node name="Menu" type="Control" parent="UI" unique_id=1222101207]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI/Menu" unique_id=1252519254]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 200.0
+offset_right = 219.0
+offset_bottom = 223.0
+rotation = 0.018103564
+scale = Vector2(2, 2)
+text = "FLAPPY BIRD"
+
+[node name="HintLabel" type="Label" parent="UI/Menu" unique_id=1110284844]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 650.0
+offset_right = 307.0
+offset_bottom = 673.0
+text = "PRESS SPACE TO START"
+
+[node name="GameOver" type="Control" parent="UI" unique_id=1506183442]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOvLabel" type="Label" parent="UI/GameOver" unique_id=759615139]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 150.0
+offset_right = 237.0
+offset_bottom = 173.0
+scale = Vector2(1.5, 1.5)
+text = "GAME OVER"
+
+[node name="ScoreLabel" type="Label" parent="UI/GameOver" unique_id=1740830709]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 300.0
+offset_right = 239.0
+offset_bottom = 323.0
+scale = Vector2(1.3, 1.3)
+text = "SCORE: 0"
+
+[node name="RestartLabel" type="Label" parent="UI/GameOver" unique_id=952954148]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 650.0
+offset_right = 322.0
+offset_bottom = 673.0
+rotation = -0.011591109
+text = "PRESS SPACE TO PLAY AGAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Control" parent="UI" unique_id=659262234]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="UI/Score" unique_id=591900243]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 20.0
+offset_right = 210.0
+offset_bottom = 43.0
+scale = Vector2(2, 2)
+text = "0"

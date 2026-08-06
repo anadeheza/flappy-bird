@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckimqja8ge1pi"
-path="res://.godot/imported/gameover.png-eb9428f61b309d2bb94706d8510fbde2.ctex"
+uid="uid://bx5neokpsyhn4"
+path="res://.godot/imported/flappyMid.png-9004c46db6dfa15dd7f0e119cde881af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/gameover.png"
-dest_files=["res://.godot/imported/gameover.png-eb9428f61b309d2bb94706d8510fbde2.ctex"]
+source_file="res://assets/sprites/flappyMid.png"
+dest_files=["res://.godot/imported/flappyMid.png-9004c46db6dfa15dd7f0e119cde881af.ctex"]
 
 [params]
 
